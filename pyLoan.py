@@ -13,11 +13,19 @@ import numpy as np
 def calculate_emi(principal, annual_rate, tenure_years):
     monthly_rate = annual_rate / 100 / 12
     total_months = int(tenure_years * 12)
+    if total_months <= 0:
+        return 0.0
+    if monthly_rate == 0:
+        return principal / total_months
     return principal * monthly_rate * (1 + monthly_rate) ** total_months / ((1 + monthly_rate) ** total_months - 1)
 
 def calculate_outstanding_principal(principal, annual_rate, tenure_years, paid_months):
     monthly_rate = annual_rate / 100 / 12
     total_months = int(tenure_years * 12)
+    if total_months <= 0:
+        return 0.0
+    if monthly_rate == 0:
+        return max(0.0, principal * (total_months - paid_months) / total_months)
     factor = (1 + monthly_rate) ** total_months
     paid_factor = (1 + monthly_rate) ** paid_months
     return principal * (factor - paid_factor) / (factor - 1)
@@ -275,10 +283,9 @@ class EMICalculator(QWidget):
         # 2. Monthly Payment Schedule
         ax2 = self.figure.add_subplot(gs[0, 1])
         ax2.set_facecolor('#2A2A2A')
-        months = np.arange(1, tenure * 12 + 1)
+        total_months = int(tenure * 12)
+        months = np.arange(1, total_months + 1)
         outstanding = []
-        monthly_rate = rate / 100 / 12
-        
         for month in months:
             out = calculate_outstanding_principal(principal, rate, tenure, month)
             outstanding.append(out)
@@ -297,6 +304,7 @@ class EMICalculator(QWidget):
         ax3.set_facecolor('#2A2A2A')
         principal_component = []
         interest_component = []
+        monthly_rate = rate / 100 / 12
         
         for month in months:
             outstanding_amount = calculate_outstanding_principal(principal, rate, tenure, month-1)
@@ -335,6 +343,9 @@ class EMICalculator(QWidget):
         principal = loan - down
         if principal <= 0:
             QMessageBox.information(self, "Done", "No loan after downpayment.")
+            return
+        if rate < 0 or tenure <= 0:
+            QMessageBox.warning(self, "Input Error", "Interest rate must be non-negative and tenure must be greater than zero.")
             return
 
         emi = calculate_emi(principal, rate, tenure)
