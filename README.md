@@ -80,19 +80,18 @@
 ## 📖 Table of Contents
 
 1. [Overview](#-overview)
-2. [Live Demo](#-live-demo)
-3. [System Overview](#-system-overview)
-4. [Features](#-features)
-5. [Capability Visualization](#-capability-visualization)
-6. [Architecture](#-architecture-diagram)
-7. [Data Flow](#-data-flow)
-8. [Installation](#-installation)
-9. [Usage](#-usage)
-10. [Project Structure](#-project-structure)
-11. [Performance Stats](#-performance-stats)
-12. [Privacy](#-privacy)
-13. [Roadmap](#-roadmap)
-14. [License](#-license)
+2. [System Overview](#-system-overview)
+3. [Features](#-features)
+4. [Capability Visualization](#-capability-visualization)
+5. [Architecture](#-architecture-diagram)
+6. [Data Flow](#-data-flow)
+7. [Installation](#-installation)
+8. [Usage](#-usage)
+9. [Project Structure](#-project-structure)
+10. [Performance Stats](#-performance-stats)
+11. [Privacy](#-privacy)
+12. [Roadmap](#-roadmap)
+13. [License](#-license)
 
 ---
 
@@ -113,19 +112,11 @@ All results are backed by three interactive matplotlib charts embedded directly 
 
 ---
 
-## 🎬 Live Demo
+<div align="center">
 
-> Place demo GIF here: `assets/demo.gif`
+![Humor](https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif)
 
-![Demo](assets/demo.gif)
-
-**What the GIF should show:**
-- Typing loan parameters into the input fields (principal, rate, tenure)
-- Optionally filling in a lump-sum prepayment
-- Clicking "Calculate EMI" and watching the results panel populate
-- Switching to the Graphs tab to see the three matplotlib charts render
-
-Keep it under 5 seconds of loop — the app is fast, the GIF should be too.
+</div>
 
 ---
 
