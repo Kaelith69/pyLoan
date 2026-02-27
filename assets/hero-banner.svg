@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 240" width="820" height="240">
+  <defs>
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="heroAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="heroBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="heroGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="240" fill="url(#heroBg)" rx="14"/>
+
+  <!-- Faint grid lines -->
+  <line x1="0" y1="60"  x2="820" y2="60"  stroke="#F59E0B" stroke-width="0.3" opacity="0.12"/>
+  <line x1="0" y1="120" x2="820" y2="120" stroke="#F59E0B" stroke-width="0.3" opacity="0.12"/>
+  <line x1="0" y1="180" x2="820" y2="180" stroke="#F59E0B" stroke-width="0.3" opacity="0.10"/>
+  <line x1="205" y1="0" x2="205" y2="240" stroke="#2563EB" stroke-width="0.3" opacity="0.10"/>
+  <line x1="410" y1="0" x2="410" y2="240" stroke="#2563EB" stroke-width="0.3" opacity="0.10"/>
+  <line x1="615" y1="0" x2="615" y2="240" stroke="#2563EB" stroke-width="0.3" opacity="0.10"/>
+
+  <!-- Decorative amortisation curve (right side) -->
+  <polyline points="580,200 610,175 640,145 665,122 690,105 715,95 745,90 775,88 805,87"
+    fill="none" stroke="#10B981" stroke-width="2" opacity="0.40" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Shading under curve -->
+  <polygon points="580,200 610,175 640,145 665,122 690,105 715,95 745,90 775,88 805,87 805,210 580,210"
+    fill="#10B981" opacity="0.06"/>
+
+  <!-- Coin decorations -->
+  <circle cx="760" cy="58"  r="46" fill="none" stroke="#F59E0B" stroke-width="2"   opacity="0.30"/>
+  <circle cx="760" cy="58"  r="30" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.20"/>
+  <text x="756" y="67" font-family="Arial" font-size="30" fill="#F59E0B" opacity="0.65" text-anchor="middle" filter="url(#heroGlow)">₹</text>
+  <circle cx="800" cy="165" r="28" fill="none" stroke="#2563EB" stroke-width="1.5" opacity="0.18"/>
+  <circle cx="52"  cy="185" r="22" fill="none" stroke="#10B981" stroke-width="1.5" opacity="0.22"/>
+
+  <!-- Small tick marks suggesting a schedule axis -->
+  <line x1="64" y1="210" x2="64"  y2="218" stroke="#9CA3AF" stroke-width="1" opacity="0.35"/>
+  <line x1="130" y1="210" x2="130" y2="218" stroke="#9CA3AF" stroke-width="1" opacity="0.35"/>
+  <line x1="196" y1="210" x2="196" y2="218" stroke="#9CA3AF" stroke-width="1" opacity="0.35"/>
+  <line x1="64" y1="210" x2="196" y2="210" stroke="#9CA3AF" stroke-width="0.8" opacity="0.25"/>
+
+  <!-- Accent underbar -->
+  <rect x="64" y="188" width="500" height="5" rx="2.5" fill="url(#heroAccent)" opacity="0.85"/>
+
+  <!-- Main title: "py" plain white + "Loan" accented -->
+  <text x="64" y="118" font-family="'Segoe UI', Arial, sans-serif" font-size="62" font-weight="700"
+        fill="#FFFFFF" filter="url(#heroGlow)">py</text>
+  <text x="152" y="118" font-family="'Segoe UI', Arial, sans-serif" font-size="62" font-weight="700"
+        fill="url(#heroAccent)" filter="url(#heroGlow)">Loan</text>
+
+  <!-- Tagline -->
+  <text x="66" y="155" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#9CA3AF">
+    Desktop EMI Calculator · Dark UI · Lump-sum Prepayment · Interactive Charts
+  </text>
+
+  <!-- Tags / pills -->
+  <rect x="66"  y="200" width="68" height="22" rx="11" fill="#F59E0B" opacity="0.88"/>
+  <text x="100" y="215" font-family="Arial" font-size="11" fill="#0d1117" text-anchor="middle" font-weight="bold">v1.1.0</text>
+
+  <rect x="144" y="200" width="62" height="22" rx="11" fill="#2563EB" opacity="0.88"/>
+  <text x="175" y="215" font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle">Python</text>
+
+  <rect x="216" y="200" width="54" height="22" rx="11" fill="#10B981" opacity="0.88"/>
+  <text x="243" y="215" font-family="Arial" font-size="11" fill="#FFFFFF" text-anchor="middle">PyQt5</text>
+
+  <rect x="280" y="200" width="78" height="22" rx="11" fill="#1F2937" stroke="#9CA3AF" stroke-width="0.8" opacity="0.90"/>
+  <text x="319" y="215" font-family="Arial" font-size="11" fill="#9CA3AF" text-anchor="middle">matplotlib</text>
+</svg>

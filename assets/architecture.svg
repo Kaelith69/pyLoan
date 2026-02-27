@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+    </linearGradient>
+    <marker id="arrA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F59E0B" opacity="0.85"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563EB" opacity="0.85"/>
+    </marker>
+    <marker id="arrC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981" opacity="0.85"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="440" fill="url(#archBg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="410" y="34" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#9CA3AF"
+        text-anchor="middle" font-weight="bold">pyLoan.py — Application Architecture</text>
+
+  <!-- Layer label: Entry Point -->
+  <text x="22" y="80" font-family="Arial" font-size="10" fill="#F59E0B" opacity="0.55" font-style="italic">ENTRY POINT</text>
+  <line x1="22" y1="83" x2="798" y2="83" stroke="#F59E0B" stroke-width="0.4" opacity="0.20"/>
+
+  <!-- Entry Point box -->
+  <rect x="300" y="54" width="220" height="44" rx="8" fill="#1F2937" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="410" y="72" font-family="Arial" font-size="11" fill="#F59E0B" text-anchor="middle" font-weight="bold">Entry Point</text>
+  <text x="410" y="89" font-family="Arial" font-size="10" fill="#9CA3AF" text-anchor="middle">if __name__ == "__main__"</text>
+
+  <!-- Arrow Entry→QApp -->
+  <line x1="410" y1="98" x2="410" y2="128" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#arrA)" opacity="0.80"/>
+
+  <!-- Layer label: Qt Runtime -->
+  <text x="22" y="152" font-family="Arial" font-size="10" fill="#2563EB" opacity="0.55" font-style="italic">QT RUNTIME LAYER</text>
+  <line x1="22" y1="155" x2="798" y2="155" stroke="#2563EB" stroke-width="0.4" opacity="0.20"/>
+
+  <!-- QApplication box -->
+  <rect x="280" y="130" width="260" height="44" rx="8" fill="#1F2937" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="410" y="148" font-family="Arial" font-size="11" fill="#2563EB" text-anchor="middle" font-weight="bold">QApplication</text>
+  <text x="410" y="165" font-family="Arial" font-size="10" fill="#9CA3AF" text-anchor="middle">PyQt5 event loop — owns the process lifetime</text>
+
+  <!-- Arrow QApp→EMICalc -->
+  <line x1="410" y1="174" x2="410" y2="206" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrB)" opacity="0.80"/>
+
+  <!-- Layer label: GUI Layer -->
+  <text x="22" y="230" font-family="Arial" font-size="10" fill="#10B981" opacity="0.55" font-style="italic">GUI LAYER</text>
+  <line x1="22" y1="233" x2="798" y2="233" stroke="#10B981" stroke-width="0.4" opacity="0.20"/>
+
+  <!-- EMICalculator(QWidget) main box -->
+  <rect x="160" y="210" width="500" height="108" rx="8" fill="#1F2937" stroke="#10B981" stroke-width="2"/>
+  <text x="410" y="232" font-family="Arial" font-size="12" fill="#10B981" text-anchor="middle" font-weight="bold">EMICalculator(QWidget)</text>
+
+  <!-- Sub-labels inside -->
+  <rect x="180" y="242" width="138" height="28" rx="4" fill="#0d1117" opacity="0.60"/>
+  <text x="249" y="256" font-family="Arial" font-size="9.5" fill="#F59E0B" text-anchor="middle">setup_dark_theme()</text>
+  <text x="249" y="268" font-family="Arial" font-size="9" fill="#9CA3AF" text-anchor="middle">QPalette + stylesheet</text>
+
+  <rect x="336" y="242" width="108" height="28" rx="4" fill="#0d1117" opacity="0.60"/>
+  <text x="390" y="256" font-family="Arial" font-size="9.5" fill="#2563EB" text-anchor="middle">init_ui()</text>
+  <text x="390" y="268" font-family="Arial" font-size="9" fill="#9CA3AF" text-anchor="middle">QTabWidget builder</text>
+
+  <rect x="462" y="242" width="178" height="28" rx="4" fill="#0d1117" opacity="0.60"/>
+  <text x="551" y="256" font-family="Arial" font-size="9.5" fill="#10B981" text-anchor="middle">on_calculate() · plot_graphs()</text>
+  <text x="551" y="268" font-family="Arial" font-size="9" fill="#9CA3AF" text-anchor="middle">event handler + chart renderer</text>
+
+  <text x="410" y="307" font-family="Arial" font-size="9.5" fill="#6B7280" text-anchor="middle">QTabWidget · QGroupBox · QLineEdit · QLabel · FigureCanvasQTAgg</text>
+
+  <!-- Arrows from EMICalc down to calc and chart layers -->
+  <line x1="290" y1="318" x2="230" y2="358" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#arrA)" opacity="0.80"/>
+  <line x1="530" y1="318" x2="590" y2="358" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrB)" opacity="0.80"/>
+
+  <!-- Layer label: Processing Layer -->
+  <text x="22" y="355" font-family="Arial" font-size="10" fill="#F59E0B" opacity="0.45" font-style="italic">PROCESSING LAYER</text>
+  <line x1="22" y1="358" x2="798" y2="358" stroke="#F59E0B" stroke-width="0.4" opacity="0.15"/>
+
+  <!-- Calculation Layer box -->
+  <rect x="52" y="364" width="340" height="54" rx="8" fill="#1F2937" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="222" y="382" font-family="Arial" font-size="11" fill="#F59E0B" text-anchor="middle" font-weight="bold">Calculation Layer (pure functions)</text>
+  <text x="222" y="398" font-family="Arial" font-size="9.5" fill="#9CA3AF" text-anchor="middle">calculate_emi · calculate_outstanding_principal</text>
+  <text x="222" y="411" font-family="Arial" font-size="9.5" fill="#9CA3AF" text-anchor="middle">calculate_new_emi_after_lump</text>
+
+  <!-- Chart Layer box -->
+  <rect x="426" y="364" width="340" height="54" rx="8" fill="#1F2937" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="596" y="382" font-family="Arial" font-size="11" fill="#2563EB" text-anchor="middle" font-weight="bold">Chart Layer (matplotlib)</text>
+  <text x="596" y="398" font-family="Arial" font-size="9.5" fill="#9CA3AF" text-anchor="middle">Pie · Line · Stacked Area</text>
+  <text x="596" y="411" font-family="Arial" font-size="9.5" fill="#9CA3AF" text-anchor="middle">rendered via FigureCanvasQTAgg</text>
+</svg>
